@@ -13,10 +13,6 @@ public class Proveedores {
 	private String telefono_proveedor;
 	private String direccion_proveedor;
 	
-	
-	
-	
-	
 	public Long getNit_proveedor() {
 		return nit_proveedor;
 	}
