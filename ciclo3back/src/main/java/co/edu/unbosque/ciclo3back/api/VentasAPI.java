@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.Optional;
 
+import co.edu.unbosque.ciclo3back.model.Consecutivo;
 import co.edu.unbosque.ciclo3back.dao.VentasDAO;
 import co.edu.unbosque.ciclo3back.model.Usuarios;
 import co.edu.unbosque.ciclo3back.model.Ventas;
@@ -29,5 +31,9 @@ public class VentasAPI {
 	public List<Ventas>listar(){
 		return ventasdao.findAll();
 	}
-	
+
+	@GetMapping("/consecutivo")
+	public Optional<Consecutivo> buscarNextId(){
+		return ventasdao.obtenerConsecutivo();
+	}
 }
